@@ -110,3 +110,4 @@ E:\Study\TH-Web\DuongGiaBao_Bigschool\DuongGiaBao_Bigschool\DuongGiaBao_Bigschoo
 E:\Study\TH-Web\DuongGiaBao_Bigschool\DuongGiaBao_Bigschool\DuongGiaBao_Bigschool\obj\Debug\DuongGiaBao_Bigschool.csproj.GenerateResource.cache
 E:\Study\TH-Web\DuongGiaBao_Bigschool\DuongGiaBao_Bigschool\DuongGiaBao_Bigschool\obj\Debug\DuongGiaBao_Bigschool.Migrations.CreateTableCourse.resources
 E:\Study\TH-Web\DuongGiaBao_Bigschool\DuongGiaBao_Bigschool\DuongGiaBao_Bigschool\obj\Debug\DuongGiaBao_Bigschool.Migrations.PopulateCategoryTable.resources
+E:\Study\TH-Web\DuongGiaBao_Bigschool\DuongGiaBao_Bigschool\DuongGiaBao_Bigschool\obj\Debug\DuongGiaBao_Bigschool.Migrations.AddNameColumnToApplicationUser.resources
