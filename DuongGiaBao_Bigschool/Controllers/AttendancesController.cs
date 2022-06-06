@@ -1,4 +1,5 @@
-﻿using DuongGiaBao_Bigschool.Models;
+﻿using DuongGiaBao_Bigschool.DTOs;
+using DuongGiaBao_Bigschool.Models;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
@@ -20,16 +21,32 @@ namespace DuongGiaBao_Bigschool.Controllers
             _dbContext = new ApplicationDbContext();
         }
 
+        //[HttpPost]
+        //public IHttpActionResult Attend([FromBody] int courseId)
+        //{
+        //    var attendance = new Attendance
+        //    {
+        //        CourseId = courseId,
+        //        AttendeeId = User.Identity.GetUserId()
+        //    };
+
+        //    _dbContext.Attendances.Add(attendance);
+        //    _dbContext.SaveChanges();
+        //    return Ok();
+        //}
+
         [HttpPost]
-        public IHttpActionResult Attend([FromBody] int courseId)
+        public IHttpActionResult Attend(AttendanceDto attendanceDto)
         {
-            var attendance = new Attendance
+            var uerId = User.Identity.GetUserId();
+            if (_dbContext.Attendances.Any(a => a.AttendeeId == uerId && a.CourseId == attendanceDto.CourseId))
+                return BadRequest("The Attendence alrealy exists");
+            var attendace = new Attendance
             {
-                CourseId = courseId,
+                CourseId = attendanceDto.CourseId,
                 AttendeeId = User.Identity.GetUserId()
             };
-
-            _dbContext.Attendances.Add(attendance);
+            _dbContext.Attendances.Add(attendace);
             _dbContext.SaveChanges();
             return Ok();
         }

@@ -24,28 +24,28 @@
                     <span class="category">
                         @course.Category.Name
                     </span>
-                    @*<button data-course-id="@item.Id" class="btn btn-default btn-sm js-toggle-attendace">Going?</button>*@
+                    <button data-course-id="@course.Id" class="btn btn-default btn-sm js-toggle-attendace">Going?</button>
                 </div>
             </li>
         }
     </ul>
-    @*@section scripts
-        {
-        <script>
-            $(document).ready(function () {
-                $(".js-toggle-attendace").click(function (e) {
-                    var button = $(e.target);
-                    $.post("/api/attendances", { courseId: button.attr("data-course-id") })
-                        .done(function () {
-                            button.removeClass("btn-default")
-                                .addClass("btn-info")
-                                .text("Going");
-                        })
-                        .fail(function () {
-                            alert("Something goes wrong");
-                        });
-                });
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $(".js-toggle-attendace").click(function (e) {
+                var button = $(e.target);
+                $.post("/api/attendances", { courseId: button.attr("data-course-id") })
+                    .done(function () {
+                        button.removeClass("btn-default")
+                            .addClass("btn-info")
+                            .text("Going");
+                    })
+                    .fail(function () {
+                        alert("Something goes wrong");
+                    });
             });
-        </script>
-    }*@
+        });
+    </script>
+}
 </div>
