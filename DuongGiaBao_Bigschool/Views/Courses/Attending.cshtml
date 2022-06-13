@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Attending";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Attending</h2>
+
+<ul class="course" style="list-style: none">
+    @foreach (var course in Model.UpCommingCourses)
+    {
+        <li style="position: relative; margin-bottom: 30px">
+            <div class="date" style="text-align: center; background-color: #d41d50; color: white; width: 60px; border-radius: 8px">
+                <div class="month">
+                    @course.DateTime.ToString("MM")
+                </div>
+                <div class="day">
+                    @course.DateTime.ToString("dd")
+                </div>
+            </div>
+            <div class="detail" style="position: absolute; top: 0px; left: 70px">
+                <span class="lecture">
+                    @course.Lecturer.Name
+                    @if (Model.ShowAction)
+                    {
+                        <button data-user-id="@course.LecturerId" class="btn btn-default btn-sm js-toggle-follow">Follow</button>
+                    }
+                </span>
+                <span class="category">
+                    @course.Category.Name
+                </span>
+                @*@if (Model.ShowAction)
+                {
+                    <button data-course-id="@course.Id" class="btn btn-default btn-sm js-toggle-attendace">Going</button>
+                }*@
+            </div>
+        </li>
+    }
+</ul>
