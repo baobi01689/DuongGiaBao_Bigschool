@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
 using DuongGiaBao_Bigschool.Models;
+using DuongGiaBao_Bigschool.ViewModels;
 
 namespace DuongGiaBao_Bigschool.Controllers
 {
@@ -21,7 +22,13 @@ namespace DuongGiaBao_Bigschool.Controllers
                 .Include(c => c.Lecturer)
                 .Include(c => c.Category)
                 .Where(c => c.DateTime > DateTime.Now);
-            return View(upcomingCourse);
+
+            var viewModel = new CourseViewModel
+            {
+                UpCommingCourses = upcomingCourse,
+                ShowAction = User.Identity.IsAuthenticated
+            };
+            return View(viewModel);
         }
 
         public ActionResult About()

@@ -118,3 +118,4 @@ E:\Study\TH-Web\DuongGiaBao_Bigschool\DuongGiaBao_Bigschool\DuongGiaBao_Bigschoo
 E:\Study\TH-Web\DuongGiaBao_Bigschool\DuongGiaBao_Bigschool\DuongGiaBao_Bigschool\bin\System.Net.Http.Formatting.xml
 E:\Study\TH-Web\DuongGiaBao_Bigschool\DuongGiaBao_Bigschool\DuongGiaBao_Bigschool\bin\System.Web.Http.xml
 E:\Study\TH-Web\DuongGiaBao_Bigschool\DuongGiaBao_Bigschool\DuongGiaBao_Bigschool\bin\System.Web.Http.WebHost.xml
+E:\Study\TH-Web\DuongGiaBao_Bigschool\DuongGiaBao_Bigschool\DuongGiaBao_Bigschool\obj\Debug\DuongGiaBao_Bigschool.Migrations.AddFollowingsTable.resources

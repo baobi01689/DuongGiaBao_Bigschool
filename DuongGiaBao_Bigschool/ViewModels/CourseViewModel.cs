@@ -26,5 +26,7 @@ namespace DuongGiaBao_Bigschool.ViewModels
             return DateTime.ParseExact(Date + " " + Time, "dd/MM/yyyy hh:mm", CultureInfo.InvariantCulture);
             //return DateTime.Parse(String.Format("{0} {1}", Date, Time));
         }
+        public IEnumerable<Course> UpCommingCourses { get; set; }
+        public bool ShowAction { get; set; }
     }
 }

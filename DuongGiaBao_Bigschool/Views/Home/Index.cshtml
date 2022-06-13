@@ -1,4 +1,4 @@
-﻿@model IEnumerable<DuongGiaBao_Bigschool.Models.Course>
+﻿
 
 @{
     ViewBag.Title = "Home Page";
@@ -6,7 +6,7 @@
 
 <div class="row">
     <ul class="course" style="list-style: none">
-        @foreach (var course in Model)
+        @foreach (var course in Model.UpCommingCourses)
         {
             <li style="position: relative; margin-bottom: 30px">
                 <div class="date" style="text-align: center; background-color: #d41d50; color: white; width: 60px; border-radius: 8px">
@@ -20,11 +20,18 @@
                 <div class="detail" style="position: absolute; top: 0px; left: 70px">
                     <span class="lecture">
                         @course.Lecturer.Name
+                        @if (Model.ShowAction)
+                        {
+                            <button data-user-id="@course.LecturerId" class="btn btn-default btn-sm js-toggle-follow">Follow</button>
+                        }
                     </span>
                     <span class="category">
                         @course.Category.Name
                     </span>
-                    <button data-course-id="@course.Id" class="btn btn-default btn-sm js-toggle-attendace">Going?</button>
+                        @if (Model.ShowAction)
+                        {
+                            <button data-course-id="@course.Id" class="btn btn-default btn-sm js-toggle-attendace">Going?</button>
+                        }
                 </div>
             </li>
         }
@@ -40,6 +47,16 @@
                         button.removeClass("btn-default")
                             .addClass("btn-info")
                             .text("Going");
+                    })
+                    .fail(function () {
+                        alert("Something goes wrong");
+                    });
+            });
+            $(".js-toggle-follow").click(function (e) {
+                var button = $(e.target);
+                $.post("/api/followings", { followeeId: button.attr("data-user-id") })
+                    .done(function () {
+                        button.text("Following")
                     })
                     .fail(function () {
                         alert("Something goes wrong");
