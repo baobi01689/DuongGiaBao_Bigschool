@@ -119,3 +119,4 @@ E:\Study\TH-Web\DuongGiaBao_Bigschool\DuongGiaBao_Bigschool\DuongGiaBao_Bigschoo
 E:\Study\TH-Web\DuongGiaBao_Bigschool\DuongGiaBao_Bigschool\DuongGiaBao_Bigschool\bin\System.Web.Http.xml
 E:\Study\TH-Web\DuongGiaBao_Bigschool\DuongGiaBao_Bigschool\DuongGiaBao_Bigschool\bin\System.Web.Http.WebHost.xml
 E:\Study\TH-Web\DuongGiaBao_Bigschool\DuongGiaBao_Bigschool\DuongGiaBao_Bigschool\obj\Debug\DuongGiaBao_Bigschool.Migrations.AddFollowingsTable.resources
+E:\Study\TH-Web\DuongGiaBao_Bigschool\DuongGiaBao_Bigschool\DuongGiaBao_Bigschool\obj\Debug\DuongGiaBao_Bigschool.Migrations.AddIsCanceledColumnToCourse.resources
